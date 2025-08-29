@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIDH - Skill India Digital Hub | Admin Portal | MSDE</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="skill-india-logo-png_seeklogo-408074.png" type="image/png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #0a0707;
+    }
+
+    header {
+      display: flex;
+      justify-content: flex-end;   /* only buttons inside header */
+      align-items: stretch;
+      border-top: 2px solid #5e615c07;
+      background-color: #f9f9f9;
+      position: relative;
+      height: 50px;
+      padding: 0;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(
+        to right,
+        rgb(59, 220, 59) 0%,
+        rgb(59, 220, 59) 33.33%,
+        rgb(66, 138, 221) 33.33%,
+        rgb(49, 121, 229) 66.66%,
+        rgb(231, 32, 32) 66.66%,
+        rgb(231, 32, 32) 100%
+      );
+    }
+
+    .logo-bar {
+      text-align: center;
+      padding: 0px 20px;
+      background-color: #fff;
+    }
+
+    .logo-bar img {
+      height: 110px;
+    }
+
+    .logo-bar img:first-child {
+      height: 80px;
+      margin-right: 200px;
+    }
+
+    .logo-bar img:last-child {
+      height: 70px;
+      margin-left: 200px;
+    }
+
+    nav {
+      display: flex;
+      align-items: stretch;
+      margin-right: 20px;
+    }
+
+    nav button {
+      margin-left: 10px;
+      padding: 0 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .support-btn {
+      background-color: white;
+      color: rgb(43, 42, 42);
+    }
+
+    .login-btn {
+  background-color: rgb(235, 115, 24);
+  color: white;
+}
+
+.login-btn a {
+  color: white;
+  text-decoration: none;
+  display: block;   /* make link fill button */
+  padding: 12px;    /* ensures proper clickable area */
+}
+
+    .register-btn {
+      background-color: white;
+      color: rgb(40, 40, 40);
+    }
+
+    .verified-section {
+      text-align: center;
+      margin-top: 30px;
+      margin-left: -150px; 
+    }
+
+    .verified-section img {
+      width: 70px;
+    }
+
+    .verified-section h2 {
+      color: #64abf8;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    .certificate-details {
+      max-width: 500px;
+      margin: 15px auto;
+      padding: 0px;
+      font-size: 14px;
+    }
+
+    .certificate-details p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 30px 150px;
+      background-color: none;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 10px;  
+    }
+.footer-links a {
+     text-decoration: none;
+      color: rgba(14, 10, 10, 0.901);
+    }
+    .footer-links .column {
+      margin: 10px;
+      font-size: 16px; /* Reduced text size */
+    }
+
+    .footer-links h4 {
+      font-size: 20px;  /* Smaller heading */
+      margin-bottom: 15px;
+      font-weight: 50;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+       font-size: 15px;
+    }
+
+    .footer-links p {
+      font-size: 14px;
+      margin: 20px 0px;
+      margin-top: 0px;
+    }
+
+    .logos {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .logos img {
+      height: 40px;
+    }
+
+    .orange-bar {
+      background-color: #f58220;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .orange-bar a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight:normal;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with buttons -->
+  <header>
+    <nav>
+      <button class="support-btn">
+  <a href="https://sdms.symphonysummit.com/">
+    <img src="PHONE.png" 
+         alt="Phone" width="16" style="vertical-align: middle; margin-right: 2px;">
+    Technical Support
+  </a>
+</button>
+      <button class="login-btn"><a href="https://admin.skillindiadigital.gov.in/login">LOGIN</a></button>
+      <button class="register-btn"><a href="https://admin.skillindiadigital.gov.in/direct-registration">Register</a></button>
+    </nav>
+  </header>
+
+  <!-- Logo placed below bottom border -->
+  <div class="logo-bar">
+    <a href="https://admin.skillindiadigital.gov.in/login" target="_blank">
+      <img src="1.png" alt="KOUSHAL BHARATH" style="height:80px;">
+      <img src="skill-india-logo-png_seeklogo-408074.png" alt="Skill India Logo">
+      <img src="2.png" alt="KUSHAL BHARATH">
+    </a>
+  </div>
+
+  <div class="orange-bar">
+    <a href="https://admin.skillindiadigital.gov.in/login">
+      <h3>HOME</h3>
+    </a>
+  </div>
+
+  <div class="verified-section">
+    <img src="7641727.png" alt="Verified Badge">
+    <h2>Verified</h2>
+  </div>
+
+  <main>
+    <div class="certificate-details">
+      <p style="margin-left:90px;">CandidateName : KODI SRINU</p>
+      <p style="margin-left:90px;">CandidateID : IDANJ7086244</p>
+      <p style="margin-left:90px;">SectorName : Tourism & Hospitality</p>
+      <p style="margin-left:90px;">QP Name : Guest Service Associate (Food & Beverage)</p>
+      <p style="margin-left:90px;">QPCode : THC/Q0301 SSO01</p>
+      <p style="margin-left:90px;">QPVersion : 4.0</p>
+      <p style="margin-left:90px;">Result: PASS</p>
+      <p style="margin-left:90px;">Document ID : j2ekx7nsfsepakdd</p>
+      <p style="margin-left:90px;">IssuanceDate : 27-Aug-2025</p>
+      <p style="margin-left:90px;">Type : Certificate</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <div class="column">
+        <h4>LINKS</h4>
+        <ul>
+          <li><a href="https://admin.skillindiadigital.gov.in/login">home</a></li>
+          <li><a href="http://skilldevelopment.gov.in/ssc.html">ssc</a></li>
+          <li><a href="https://s3.ap-south-1.amazonaws.com/nsdcuatpublic/videos/SkillIndiaPortal.mp4">TP Scheme Help Video</a></li>
+          <li><a href="https://www.ncs.gov.in/Pages/default.aspx">National Career Service</a></li>
+          <li><a href="https://admin.skillindiadigital.gov.in/user-Manuals">User Manuals</a></li>
+          <li><a href="https://admin.skillindiadigital.gov.in/Sector-ssc">Sector & SSC</a></li>
+          <li><a href="https://admin.skillindiadigital.gov.in/verifyIssuedDocument">Verify Issued Document</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h4></h4>
+        <ul>
+            <br>
+
+          <li><a href="">DISCLAIMER</a></li>
+          <li><a href="">PRIVACY_POLICY</a></li>
+          <li><a href="">TERMS_CONDITIONS</a></li>
+          <li><a href="">CONTACT_US</a></li>
+          <li><a href="https://admin.skillindiadigital.gov.in/qpListings">QP Listing</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h4>STAY_CONTACT</h4>
+        <ul>
+          <li>
+  <a href="https://www.facebook.com/NSDCIndiaOfficial" target="_blank">
+    <img src="FACEBOOK.png" 
+         alt="Facebook" width="18" style="vertical-align: middle; margin-right: 8px;">
+    <strong>Facebook</strong>
+  </a>
+</li>
+
+<li>
+  <a href="https://x.com/nsdcindia" target="_blank">
+    <img src="TWITTER.png" 
+         alt="Twitter/X" width="18" style="vertical-align: middle; margin-right: 8px;">
+    <strong>Twitter</strong>
+  </a>
+</li>
+        </ul>
+      </div>
+      <div class="column">
+        <p>CANDIDATE_REGISTRATION_APP_ONLINE</p>
+        <a href="c:\Users\Dell\Downloads\SDMS-Candidate.apk" download="SDMS-Candidate.apk">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+       alt="Google Play" width="160">
+</a>
+        <br>
+        <br>
+        <p>CANDIDATE_REGISTRATION_APP_OFFLINE</p>
+        <a href="c:\Users\Dell\Downloads\SDMS-Candidate.apk" download="SDMS-Candidate.apk">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+       alt="Google Play" width="160"></a>
+        <br>
+        <br>
+        <p>ASSESSOR_APP</p>
+        <a href="c:\Users\Dell\Downloads\SDMS-Candidate.apk" download="SDMS-Candidate.apk">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+       alt="Google Play" width="160"></a>
+      </div>
+      <div class="column">
+        <img src="NSDC.png" alt="Google Play" width="120">
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="https://www.ncs.gov.in/Pages/default.aspx"><img src="CAREER.png" alt="Google Play" width="100">
+      </div></a>
+    </div>
+
+  </footer>
+  <hr style="border: none; height: 30px; background-color: black; margin-left: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 0px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+</body>
+</html>
